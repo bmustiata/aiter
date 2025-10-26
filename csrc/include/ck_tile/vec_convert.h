@@ -40,7 +40,8 @@ struct numeric<fp4x2_t>
 CK_TILE_DEVICE fp32x2_v amd_assembly_pk_mul_f32(fp32x2_v a, fp32x2_t b)
 {
     fp32x2_v c;
-    asm volatile("v_pk_mul_f32 %0, %1, %2" : "=v"(c) : "v"(a), "v"(b));
+    asm volatile("v_mul_f32 %0, %1, %2" : "=v"(c[0]) : "v"(a[0]), "v"(b[0]));
+    asm volatile("v_mul_f32 %0, %1, %2" : "=v"(c[1]) : "v"(a[1]), "v"(b[1]));
     return c;
 }
 CK_TILE_DEVICE fp8x2_v amd_assembly_cvt_pk_fp8_f32(fp32_t a, fp32_t b)

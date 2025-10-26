@@ -141,6 +141,7 @@ def validate_and_update_archs():
         "gfx941",
         "gfx942",
         "gfx1100",
+        "gfx1151",
         "gfx950",
     ]
 

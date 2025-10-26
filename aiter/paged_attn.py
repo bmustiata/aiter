@@ -34,10 +34,7 @@ def is_hip():
 _PARTITION_SIZE = 512 if not is_hip() else 1024
 _PARTITION_SIZE_ROCM = 256
 _DEVICE_PROPERTIES = torch.cuda.get_device_properties("cuda")
-_ON_NAVI = (
-    hasattr(_DEVICE_PROPERTIES, "gcnArchName")
-    and "gfx1" in torch.cuda.get_device_properties("cuda").gcnArchName
-)
+_ON_NAVI = False
 
 
 # page attention ops
